@@ -1,4 +1,8 @@
-import Button from './Components/Button';
+if (document.querySelectorAll('a').length) {
+  require.ensure([], () => {
+    const Button = require('./Components/Button.js');
+    const button = new Button('google.com');
 
-const button = new Button('google.com');
-button.render('a');
+    button.render('a')
+  });
+}
